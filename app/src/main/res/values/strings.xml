@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">SCMT_UI_MOVIL</string>
+    <string name="iniciar_sesion">Iniciar sesion</string>
+    <string name="entrar_con_huella">Entrar con huella</string>
+    <string name="usuario">Usuario</string>
+    <string name="contrasenia">Contraseña</string>
+    <string name="usuario1">Usuario</string>
 </resources>
