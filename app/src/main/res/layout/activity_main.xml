@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/carretera"
+    android:fitsSystemWindows="true"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/cTUsuario"
+        android:layout_width="248dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="422dp"
+        android:autofillHints=""
+        android:background="@drawable/ct_trans_radius"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/usuario"
+        android:textColor="@color/white"
+        android:textColorHint="@android:color/white"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="LabelFor,MissingConstraints,TextSizeCheck" />
+
+    <EditText
+        android:id="@+id/cTContrasenia"
+        android:layout_width="248dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="508dp"
+        android:autofillHints=""
+        android:background="@drawable/ct_trans_radius"
+        android:alpha="0.6"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:text="@string/contrasenia"
+        android:textColor="@color/white"
+        android:textColorHint="@android:color/white"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="LabelFor,MissingConstraints,TextSizeCheck" />
+
+    <Button
+        android:id="@+id/btniniciar_sesion"
+        android:layout_width="248dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="604dp"
+        android:background="@drawable/button_radius"
+        android:text="@string/iniciar_sesion"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.527"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints,TextContrastCheck" />
+
+    <Button
+        android:id="@+id/btnhuella"
+        android:layout_width="248dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="748dp"
+        android:background="@drawable/button_radius"
+        android:text="@string/entrar_con_huella"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints,TextContrastCheck,VisualLintBounds,TextSizeCheck" />
+
+</android.support.constraint.ConstraintLayout>
