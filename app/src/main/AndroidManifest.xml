@@ -13,7 +13,14 @@
         tools:targetApi="31">
         <activity
             android:name=".Perfil"
-            android:exported="false" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.action.Perfil" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
         <activity
             android:name=".Inicio"
             android:exported="true">
