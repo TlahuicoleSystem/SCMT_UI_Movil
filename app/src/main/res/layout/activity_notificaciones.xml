@@ -89,8 +89,8 @@
         android:id="@+id/textView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="115dp"
-        android:layout_marginTop="26dp"
+        android:layout_marginStart="91dp"
+        android:layout_marginTop="24dp"
         android:text="@string/notificaciones"
         android:textColor="#4ECDE6"
         android:textSize="28sp"
@@ -112,4 +112,18 @@
         app:layout_constraintStart_toStartOf="@+id/view5"
         app:layout_constraintTop_toTopOf="@+id/view5"
         tools:ignore="MissingConstraints,TextSizeCheck" />
+
+    <ImageView
+        android:id="@+id/regresar"
+        android:layout_width="37dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="380dp"
+        app:layout_constraintEnd_toEndOf="@+id/zonaperfil2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/zonaperfil2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/flechita"
+        android:contentDescription="@string/regresar" />
 </android.support.constraint.ConstraintLayout>
