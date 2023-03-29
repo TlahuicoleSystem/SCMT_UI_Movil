@@ -25,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="91dp"
-        android:layout_marginTop="26dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="92dp"
         android:text="@string/registrar_asistencia"
         android:textColor="#4ECDE6"
@@ -92,4 +92,17 @@
         app:srcCompat="@drawable/qr"
         tools:ignore="MissingConstraints" />
 
+    <ImageView
+        android:id="@+id/regresar"
+        android:layout_width="37dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="380dp"
+        app:layout_constraintEnd_toEndOf="@+id/zonaperfil3"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/zonaperfil3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/flechita"
+        android:contentDescription="@string/regresar" />
 </android.support.constraint.ConstraintLayout>
