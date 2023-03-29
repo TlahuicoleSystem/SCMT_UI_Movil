@@ -24,4 +24,13 @@
     <string name="notificacion_2">Notificacion 2</string>
     <string name="notificaciones">Notificaciones</string>
     <string name="notificacion_1">Notificacion 1</string>
+    <string name="imageqr">imageqr</string>
+    <string name="registrar_asistencia">Registrar asistencia</string>
+    <string name="selecciona_la_ruta">Selecciona la ruta</string>
+    <string name="mostrar_qr">Mostrar QR</string>
+    <string name="enviar">Enviar</string>
+    <string name="prioridad">Prioridad</string>
+    <string name="especificar_la_incidencia">Especificar la incidencia</string>
+    <string name="ruta">Ruta</string>
+    <string name="reportar_incidencias">Reportar incidencias</string>
 </resources>
