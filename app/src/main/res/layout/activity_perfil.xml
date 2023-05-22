@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,27 +7,40 @@
     android:background="#263245"
     tools:context=".Perfil">
 
-
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/direccion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="792dp"
-        android:text="@string/abraham_cocoletzi_zempoalteca"
+        android:text=""
         android:textColor="@color/white"
         android:textSize="26sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintHorizontal_bias="0.051"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints,VisualLintBounds" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/licencia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="900dp"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints,VisualLintBounds" />
+
+    <TextView
+        android:id="@+id/telefono"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="680dp"
-        android:text="@string/almacen"
+        android:text=""
         android:textColor="@color/white"
         android:textSize="26sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,7 +50,7 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/usuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="572dp"
@@ -45,21 +58,21 @@
         android:textColor="@color/white"
         android:textSize="26sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.067"
+        app:layout_constraintHorizontal_bias="0.051"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/nombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="460dp"
-        android:text="@string/josue_barrales_galvez3"
+        android:text=""
         android:textColor="@color/white"
         android:textSize="26sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintHorizontal_bias="0.051"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
@@ -97,7 +110,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="640dp"
-        android:text="@string/area"
+        android:text="Telefono"
         android:textColor="#4ECDE6"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -111,11 +124,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="740dp"
-        android:text="@string/jefe_inmediato"
+        android:text="Direccion"
         android:textColor="#4ECDE6"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.057"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="856dp"
+        android:text="Licencia"
+        android:textColor="#4ECDE6"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.061"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
@@ -133,7 +160,7 @@
 
     <View
         android:id="@+id/view"
-        android:layout_width="487dp"
+        android:layout_width="match_parent"
         android:layout_height="274dp"
         android:background="@drawable/rectangle"
         app:layout_constraintEnd_toEndOf="parent"
@@ -171,7 +198,7 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/numero_empleado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="344dp"
@@ -186,15 +213,15 @@
 
     <ImageView
         android:id="@+id/regresar"
-        android:layout_width="37dp"
+        android:layout_width="30dp"
         android:layout_height="34dp"
         android:layout_marginStart="36dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="380dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="400dp"
         android:contentDescription="@string/regresar"
         app:layout_constraintEnd_toEndOf="@+id/view"
         app:layout_constraintHorizontal_bias="0.676"
         app:layout_constraintStart_toStartOf="@+id/view"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/flechita" />
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
