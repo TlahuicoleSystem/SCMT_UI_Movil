@@ -2,6 +2,7 @@ package com.example.scmt_ui_movil;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,19 +20,17 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Perfil extends AppCompatActivity {
     private String idUsuario;
-    private  TextView nombreCompleto, numeroEmpleado, usuario, direccion, telefono, licencia;
+    private int rol;
+    private  TextView nombreCompleto, numeroEmpleado, usuario, direccion, telefono, licencia, turno;
+    private  TextView numeroEmpleado_pasajero, direccion_area, licencia_jefe, turno_;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil);
         idUsuario = getIntent().getStringExtra("id");
         nombreCompleto = findViewById(R.id.nombre);
-        numeroEmpleado = findViewById(R.id.numero_empleado);
-        usuario = findViewById(R.id.usuario);
-        direccion = findViewById(R.id.direccion);
-        telefono = findViewById(R.id.telefono);
-        licencia = findViewById(R.id.licencia);
         nombreCompleto.setText(getIntent().getStringExtra("nombreCompleto"));
+        rol = Integer.parseInt(getIntent().getStringExtra("rol"));
         consultar(idUsuario);
     }
 
@@ -46,11 +45,7 @@ public class Perfil extends AppCompatActivity {
                     if(response.isSuccessful()){
                         PerfilConductor responseFromAPI = response.body();
                         Map<String,String> datos = responseFromAPI.getData();
-                        numeroEmpleado.setText(datos.get("id_empleado"));
-                        usuario.setText(datos.get("usuario"));
-                        direccion.setText(datos.get("direccion"));
-                        telefono.setText(datos.get("telefono"));
-                        licencia.setText(datos.get("id_licencia"));
+                        estructura(datos);
                     }else{
                         Toast.makeText(Perfil.this,"Error al caragr los datos, intente de nuevo más tarde",Toast.LENGTH_SHORT).show();
                     }
@@ -65,5 +60,37 @@ public class Perfil extends AppCompatActivity {
                 System.out.println(t.getMessage());
             }
         });
+    }
+
+    private void estructura(Map<String,String> datos){
+        numeroEmpleado = findViewById(R.id.numero_empleado);
+        usuario = findViewById(R.id.usuario);
+        direccion = findViewById(R.id.direccion);
+        telefono = findViewById(R.id.telefono);
+        licencia = findViewById(R.id.licencia);
+        turno = findViewById(R.id.turno);
+        turno_ = findViewById(R.id.turno_);
+        if(rol == 2) {
+            numeroEmpleado.setText(datos.get("id_empleado"));
+            usuario.setText(datos.get("usuario"));
+            direccion.setText(datos.get("direccion"));
+            telefono.setText(datos.get("telefono"));
+            licencia.setText(datos.get("id_licencia"));
+            turno.setVisibility(View.GONE);
+            turno_.setVisibility(View.GONE);
+        }else{
+            numeroEmpleado_pasajero = findViewById(R.id.num_empleado_pasajero);
+            numeroEmpleado_pasajero.setText("Numero de empleado");
+            direccion_area = findViewById(R.id.direccion_area);
+            direccion_area.setText("Area");
+            licencia_jefe = findViewById(R.id.licencia_jefeinmediato);
+            licencia_jefe.setText("Jefe inmediato");
+            numeroEmpleado.setText(datos.get("id_pasajero"));
+            usuario.setText(datos.get("usuario"));
+            telefono.setText(datos.get("telefono"));
+            direccion.setText(datos.get("area"));
+            licencia.setText(datos.get("jefe_inmediato"));
+            turno.setText(datos.get("turno"));
+        }
     }
 }

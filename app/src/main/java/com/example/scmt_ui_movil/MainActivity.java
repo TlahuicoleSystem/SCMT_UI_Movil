@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<LoginEnvio> call, Response<LoginEnvio> response) {
                 Intent intent = new Intent(MainActivity.this,Inicio.class);
+                Intent pasajero = new Intent(MainActivity.this,inicioPasajero.class);
                 try {
                     if (response.isSuccessful()){
                         LoginEnvio responseFromAPI = response.body();
@@ -67,7 +68,15 @@ public class MainActivity extends AppCompatActivity {
                         intent.putExtra("id", datos.get("id"));
                         intent.putExtra("compania", datos.get("tcompania_id"));
                         intent.putExtra("fotografia", datos.get("fotografia"));
-                        intent.putExtra("rol", rol);
+                        intent.putExtra("rol", datos.get("trol_id"));
+
+                        pasajero.putExtra("nombre", datos.get("nombre"));
+                        pasajero.putExtra("primer_apellido", datos.get("primer_apellido"));
+                        pasajero.putExtra("segundo_apellido", datos.get("segundo_apellido"));
+                        pasajero.putExtra("id", datos.get("id"));
+                        pasajero.putExtra("compania", datos.get("tcompania_id"));
+                        pasajero.putExtra("fotografia", datos.get("fotografia"));
+                        pasajero.putExtra("rol", datos.get("trol_id"));
                         if (rol == 1){
                             Toast.makeText(MainActivity.this,"Lo sentimos debe inicar sesion en Web",Toast.LENGTH_SHORT).show();
                         } else if (rol == 2) {
@@ -75,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
                             startActivity(intent);
                         } else if (rol == 3) {
                             Toast.makeText(MainActivity.this, "Bienvenido: " + datos.get("nombre"), Toast.LENGTH_SHORT).show();
-                            //startActivity(intent);
+                            startActivity(pasajero);
                         }
                     }else{
                         Toast.makeText(MainActivity.this,"Usuario o contraseña incorrectos",Toast.LENGTH_SHORT).show();
