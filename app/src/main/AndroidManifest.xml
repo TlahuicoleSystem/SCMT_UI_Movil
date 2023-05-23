@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:usesCleartextTraffic="true">
 
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -15,15 +16,17 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".inicioPasajero"
+            android:exported="false" />
+        <activity
             android:name=".Incidencias"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
-                <action android:name="com.example.action.Incidencias"/>
+                <action android:name="com.example.action.Incidencias" />
 
-                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".Registrar_Asistencia"
             android:exported="true">

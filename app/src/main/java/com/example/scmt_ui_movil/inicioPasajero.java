@@ -1,9 +1,11 @@
 package com.example.scmt_ui_movil;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
@@ -11,10 +13,10 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.bumptech.glide.Glide;
+
 import com.google.android.material.navigation.NavigationView;
 
-public class Inicio extends AppCompatActivity {
+public class inicioPasajero extends AppCompatActivity {
     private NavigationView navView;
     private String nombreCompleto;
     private String compania;
@@ -22,7 +24,7 @@ public class Inicio extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_inicio);
+        setContentView(R.layout.activity_inicio_pasajero);
         idUsuario = getIntent().getStringExtra("id");
         compania = getIntent().getStringExtra("compania");
         nombreCompleto = getIntent().getStringExtra("nombre") + " " + getIntent().getStringExtra("primer_apellido") + " " + getIntent().getStringExtra("segundo_apellido");
@@ -42,17 +44,16 @@ public class Inicio extends AppCompatActivity {
         //Glide.with(getApplicationContext()).load(imgPerfil).into(imageView);
         menu();//Lamamos al metododo que da funcionalidad al menu
     }
-
     public void menu(){
-        Intent perfil = new Intent(Inicio.this,Perfil.class);
+        Intent perfil = new Intent(inicioPasajero.this,Perfil.class);
         perfil.putExtra("nombreCompleto",nombreCompleto);
         perfil.putExtra("id",idUsuario);
         perfil.putExtra("compania",compania);
         perfil.putExtra("rol",getIntent().getStringExtra("rol"));
-        Intent registrarIncidenias = new Intent(Inicio.this,Incidencias.class);
+        Intent registrarIncidenias = new Intent(inicioPasajero.this,Incidencias.class);
         registrarIncidenias.putExtra("id",idUsuario);
         registrarIncidenias.putExtra("nombreCompleto",nombreCompleto);
-        Intent visualizarQR = new Intent(Inicio.this,Registrar_Asistencia.class);
+        Intent visualizarQR = new Intent(inicioPasajero.this,Registrar_Asistencia.class);
         navView = (NavigationView) findViewById(R.id.navView);
         navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
