@@ -62,7 +62,7 @@ public class Incidencias extends AppCompatActivity implements AdapterView.OnItem
     }
     private void consumirRutas(int idUsuario){
         ArrayList<String> listaRuta = new ArrayList<String>();
-        Retrofit usuarioR = new Retrofit.Builder().baseUrl("http://192.168.1.69:5000/").addConverterFactory(GsonConverterFactory.create()).build();
+        Retrofit usuarioR = new Retrofit.Builder().baseUrl("https://scmtapis.azurewebsites.net/").addConverterFactory(GsonConverterFactory.create()).build();
         IncidenciaAPI rutasAPI = usuarioR.create(IncidenciaAPI.class);
         Call <List<ListaRutas>> call = rutasAPI.rutas(idUsuario);
         call.enqueue(new Callback<List<ListaRutas>>() {
@@ -118,7 +118,7 @@ public class Incidencias extends AppCompatActivity implements AdapterView.OnItem
         Toast.makeText(Incidencias.this,"Selecciona una ruta",Toast.LENGTH_SHORT).show();
     }
     private void insertarIncidencia(int idUsuario,int idRuta,String nombre, String descripcion){
-        Retrofit retrofit = new Retrofit.Builder().baseUrl("http://192.168.1.69:5000/").addConverterFactory(GsonConverterFactory.create()).build();
+        Retrofit retrofit = new Retrofit.Builder().baseUrl("https://scmtapis.azurewebsites.net/").addConverterFactory(GsonConverterFactory.create()).build();
         IncidenciaAPI retrofitAPI = retrofit.create(IncidenciaAPI.class);
         IncidenciaModel modal = new com.example.scmt_ui_movil.modelos.IncidenciaModel(idRuta, idUsuario, nombre,descripcion,"2023-05-09","07:30:00");
         Call<IncidenciaModel> call = retrofitAPI.insertarIncidencia(modal);

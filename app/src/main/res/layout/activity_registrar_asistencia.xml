@@ -48,26 +48,27 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="TextSizeCheck" />
 
-    <EditText
-        android:id="@+id/editTextTextPersonName"
+    <Spinner
+        android:id="@+id/ruta"
         android:layout_width="358dp"
         android:layout_height="52dp"
-        android:layout_marginTop="228dp"
         android:alpha="0.6"
         android:autofillHints=""
         android:background="@drawable/ct_trans_radius"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text=""
-        android:textColorHint="#7986CB"
+        android:textColor="@color/white"
+        android:textColorHint="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="LabelFor,SpeakableTextPresentCheck" />
+        android:layout_marginTop="228dp"
+        tools:ignore="LabelFor,SpeakableTextPresentCheck">
+    </Spinner>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/generarQR"
         android:layout_width="248dp"
         android:layout_height="54dp"
         android:layout_marginTop="368dp"
@@ -81,15 +82,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/ivCodigoQR"
         android:layout_width="307dp"
         android:layout_height="302dp"
         android:layout_marginTop="488dp"
-        android:contentDescription="@string/imageqr"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/qr"
         tools:ignore="MissingConstraints" />
 
     <ImageView

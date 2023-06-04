@@ -39,7 +39,7 @@ public class Inicio extends AppCompatActivity {
         TextView nombre = navView.getHeaderView(0).findViewById(R.id.textView2);
         nombre.setText(nombreCompleto);
         String imgPerfil = getIntent().getStringExtra("fotografia");
-        //Glide.with(getApplicationContext()).load(imgPerfil).into(imageView);
+        Glide.with(getApplicationContext()).load(imgPerfil).into(imageView);
         menu();//Lamamos al metododo que da funcionalidad al menu
     }
 
@@ -53,6 +53,7 @@ public class Inicio extends AppCompatActivity {
         registrarIncidenias.putExtra("id",idUsuario);
         registrarIncidenias.putExtra("nombreCompleto",nombreCompleto);
         Intent visualizarQR = new Intent(Inicio.this,Registrar_Asistencia.class);
+        visualizarQR.putExtra("id",idUsuario);
         navView = (NavigationView) findViewById(R.id.navView);
         navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
