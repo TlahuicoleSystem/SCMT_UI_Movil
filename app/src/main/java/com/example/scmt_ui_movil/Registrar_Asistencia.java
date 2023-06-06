@@ -48,8 +48,9 @@ public class Registrar_Asistencia extends AppCompatActivity implements AdapterVi
                 try {
                     BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
                     Bitmap bitmap = barcodeEncoder.encodeBitmap(
-                            "idRuta:" + idRuta +
-                            " idUsuarioPasajero:" +idUsuario,
+                            idRuta +
+                            "," +idUsuario+
+                            "," +"56897",
                             BarcodeFormat.QR_CODE,
                             350,
                             350

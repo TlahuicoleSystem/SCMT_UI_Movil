@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.google.android.material.navigation.NavigationView;
 
 public class inicioPasajero extends AppCompatActivity {
@@ -21,6 +22,7 @@ public class inicioPasajero extends AppCompatActivity {
     private String nombreCompleto;
     private String compania;
     private String idUsuario;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +43,7 @@ public class inicioPasajero extends AppCompatActivity {
         TextView nombre = navView.getHeaderView(0).findViewById(R.id.textView2);
         nombre.setText(nombreCompleto);
         String imgPerfil = getIntent().getStringExtra("fotografia");
-        //Glide.with(getApplicationContext()).load(imgPerfil).into(imageView);
+        Glide.with(getApplicationContext()).load(imgPerfil).into(imageView);
         menu();//Lamamos al metododo que da funcionalidad al menu
     }
     public void menu(){
@@ -53,7 +55,8 @@ public class inicioPasajero extends AppCompatActivity {
         Intent registrarIncidenias = new Intent(inicioPasajero.this,Incidencias.class);
         registrarIncidenias.putExtra("id",idUsuario);
         registrarIncidenias.putExtra("nombreCompleto",nombreCompleto);
-        Intent visualizarQR = new Intent(inicioPasajero.this,Registrar_Asistencia.class);
+        Intent leerQR = new Intent(inicioPasajero.this,LeerQR.class);
+        leerQR.putExtra("idPasajero", idUsuario);
         navView = (NavigationView) findViewById(R.id.navView);
         navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -69,7 +72,7 @@ public class inicioPasajero extends AppCompatActivity {
                         break;
                     case R.id.op3:
                         System.out.println("Entro en el 3");
-                        startActivity(visualizarQR);
+                        startActivity(leerQR);
                         break;
                     case R.id.op4:
                         System.out.println("Entro en el 4");
