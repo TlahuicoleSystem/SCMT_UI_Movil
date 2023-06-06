@@ -35,7 +35,7 @@ public class Perfil extends AppCompatActivity {
     }
 
     protected void consultar(String idUsuario){
-        Retrofit usuarioR = new Retrofit.Builder().baseUrl("http://192.168.1.69:5000/").addConverterFactory(GsonConverterFactory.create()).build();
+        Retrofit usuarioR = new Retrofit.Builder().baseUrl("http://172.20.96.75:5000/").addConverterFactory(GsonConverterFactory.create()).build();
         LoginAPI usuarioAPI = usuarioR.create(LoginAPI.class);
         Call<PerfilConductor> call = usuarioAPI.Usuario(idUsuario);
         call.enqueue(new Callback<PerfilConductor>() {

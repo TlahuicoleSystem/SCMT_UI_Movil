@@ -54,6 +54,7 @@ public class inicioPasajero extends AppCompatActivity {
         registrarIncidenias.putExtra("id",idUsuario);
         registrarIncidenias.putExtra("nombreCompleto",nombreCompleto);
         Intent visualizarQR = new Intent(inicioPasajero.this,Registrar_Asistencia.class);
+        Intent verIncidencias = new Intent(inicioPasajero.this,verIincidencias.class);
         navView = (NavigationView) findViewById(R.id.navView);
         navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -65,7 +66,7 @@ public class inicioPasajero extends AppCompatActivity {
                         break;
                     case R.id.op2:
                         System.out.println("Entro en el 2");
-                        startActivity(registrarIncidenias);
+                        startActivity(verIncidencias);
                         break;
                     case R.id.op3:
                         System.out.println("Entro en el 3");
