@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void postData(String usuariot, String contraseñaa) {
-        Retrofit retrofit = new Retrofit.Builder().baseUrl("http://192.168.1.69:5000/").addConverterFactory(GsonConverterFactory.create()).build();
+        Retrofit retrofit = new Retrofit.Builder().baseUrl("http://172.20.96.75:5000/").addConverterFactory(GsonConverterFactory.create()).build();
         LoginAPI retrofitAPI = retrofit.create(LoginAPI.class);
         LoginEnvio modal = new LoginEnvio(usuariot, contraseñaa);
         Call<LoginEnvio> call = retrofitAPI.LoginUsuario(modal);
