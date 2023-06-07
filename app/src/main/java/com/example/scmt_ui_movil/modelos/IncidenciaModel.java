@@ -6,6 +6,8 @@ public class IncidenciaModel {
     private int truta_id;
     private int tusuario_id;
     private String nombre;
+    private String nombre_ruta;
+    private String nombre_incidente;
     private String descripcion;
     private String fecha;
     private String hora;
@@ -74,5 +76,21 @@ public class IncidenciaModel {
 
     public void setData(Map<String, String> data) {
         this.data = data;
+    }
+
+    public String getNombre_ruta() {
+        return nombre_ruta;
+    }
+
+    public void setNombre_ruta(String nombre_ruta) {
+        this.nombre_ruta = nombre_ruta;
+    }
+
+    public String getNombre_incidente() {
+        return nombre_incidente;
+    }
+
+    public void setNombre_incidente(String nombre_incidente) {
+        this.nombre_incidente = nombre_incidente;
     }
 }
