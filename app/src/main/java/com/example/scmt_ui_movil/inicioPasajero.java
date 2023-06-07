@@ -52,9 +52,9 @@ public class inicioPasajero extends AppCompatActivity {
         perfil.putExtra("id",idUsuario);
         perfil.putExtra("compania",compania);
         perfil.putExtra("rol",getIntent().getStringExtra("rol"));
-        Intent registrarIncidenias = new Intent(inicioPasajero.this,Incidencias.class);
-        registrarIncidenias.putExtra("id",idUsuario);
-        registrarIncidenias.putExtra("nombreCompleto",nombreCompleto);
+        Intent verIncidencias = new Intent(inicioPasajero.this,verIincidencias.class);
+        verIncidencias.putExtra("id",idUsuario);
+        verIncidencias.putExtra("nombreCompleto",nombreCompleto);
         Intent leerQR = new Intent(inicioPasajero.this,LeerQR.class);
         leerQR.putExtra("idPasajero", idUsuario);
         navView = (NavigationView) findViewById(R.id.navView);

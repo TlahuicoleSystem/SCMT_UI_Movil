@@ -41,7 +41,7 @@ public class verIincidencias extends AppCompatActivity {
 
     protected void consumirIncidencias(int usuarioRuta){
         List<Map<String, String>> listaIncidencias = new ArrayList<>();
-        Retrofit retrofit = new Retrofit.Builder().baseUrl("http://172.20.96.75:5000/").addConverterFactory(GsonConverterFactory.create()).build();
+        Retrofit retrofit = new Retrofit.Builder().baseUrl("https://scmtapis.azurewebsites.net/").addConverterFactory(GsonConverterFactory.create()).build();
         IncidenciaAPI incidenciaAPI = retrofit.create(IncidenciaAPI.class);
         Call<List<IncidenciaModel>> call = incidenciaAPI.obtenerIncidencias(1);
         call.enqueue(new Callback<List<IncidenciaModel>>() {
