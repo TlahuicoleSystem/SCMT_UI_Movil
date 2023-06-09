@@ -35,4 +35,9 @@
     <string name="reportar_incidencias">Reportar incidencias</string>
     <string name="regresar">Regresar</string>
     <string name="ver_incidencias">Ver incidencias</string>
+    <string name="acerca_de">Acerca de...</string>
+    <string name="todo1">TODO</string>
+    <string name="sistema_de_control_y_monitoreo_nde_unidades_de_transporte">SISTEMA DE CONTROL Y MONITOREO\nDE UNIDADES DE TRANSPORTE</string>
+    <string name="version_1_0_0">Version 1.0.0</string>
+    <string name="_2023">© 2023</string>
 </resources>

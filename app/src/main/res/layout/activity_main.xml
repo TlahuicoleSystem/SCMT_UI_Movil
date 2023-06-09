@@ -32,9 +32,9 @@
         android:layout_width="248dp"
         android:layout_height="54dp"
         android:layout_marginTop="508dp"
+        android:alpha="0.6"
         android:autofillHints=""
         android:background="@drawable/ct_trans_radius"
-        android:alpha="0.6"
         android:ems="10"
         android:inputType="textPassword"
         android:text="@string/contrasenia"
@@ -76,5 +76,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints,TextContrastCheck,VisualLintBounds,TextSizeCheck" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="374dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="83dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/scmtlogo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

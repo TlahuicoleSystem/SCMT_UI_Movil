@@ -137,4 +137,5 @@ public class LeerQR extends AppCompatActivity {
         horaa = hora + ":" + minuto + ":" + segundo;
         return horaa;
     }
+
 }
