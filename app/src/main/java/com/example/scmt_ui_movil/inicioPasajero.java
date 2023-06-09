@@ -56,6 +56,7 @@ public class inicioPasajero extends AppCompatActivity {
         verIncidencias.putExtra("id",idUsuario);
         verIncidencias.putExtra("nombreCompleto",nombreCompleto);
         Intent leerQR = new Intent(inicioPasajero.this,LeerQR.class);
+        Intent acercaDe = new Intent(inicioPasajero.this, acercade.class);
         leerQR.putExtra("idPasajero", idUsuario);
         navView = (NavigationView) findViewById(R.id.navView);
         navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -76,7 +77,7 @@ public class inicioPasajero extends AppCompatActivity {
                         break;
                     case R.id.op4:
                         System.out.println("Entro en el 4");
-                        //startActivity(visualizarQR);
+                        startActivity(acercaDe);
                         break;
                 }
                 return false;

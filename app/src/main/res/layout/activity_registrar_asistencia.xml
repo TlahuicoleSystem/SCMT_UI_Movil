@@ -98,10 +98,12 @@
         android:layout_marginStart="36dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="380dp"
+        android:onClick="irAInicio"
         app:layout_constraintEnd_toEndOf="@+id/zonaperfil3"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/zonaperfil3"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/flechita"
         android:contentDescription="@string/regresar" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

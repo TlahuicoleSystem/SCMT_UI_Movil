@@ -17,8 +17,11 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".acercade"
+            android:exported="false" />
+        <activity
             android:name=".verIincidencias"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".LeerQR"
             android:exported="false" />
@@ -28,7 +31,6 @@
         <activity
             android:name=".Incidencias"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="com.example.action.Incidencias" />
 
