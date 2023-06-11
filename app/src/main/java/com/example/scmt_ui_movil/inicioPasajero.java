@@ -42,6 +42,8 @@ public class inicioPasajero extends AppCompatActivity {
         ImageView imageView  = navView.getHeaderView(0).findViewById(R.id.imgView);
         TextView nombre = navView.getHeaderView(0).findViewById(R.id.textView2);
         nombre.setText(nombreCompleto);
+        TextView rol = navView.getHeaderView(0).findViewById(R.id.textView3);
+        rol.setText("Pasajero");
         String imgPerfil = getIntent().getStringExtra("fotografia");
         Glide.with(getApplicationContext()).load(imgPerfil).into(imageView);
         menu();//Lamamos al metododo que da funcionalidad al menu

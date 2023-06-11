@@ -14,35 +14,17 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
-
-
-
-
-    <ImageView
-        android:id="@+id/regresar"
-        android:layout_width="30dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="400dp"
-        android:contentDescription="@string/regresar"
-        app:layout_constraintEnd_toEndOf="@+id/view"
-        app:layout_constraintHorizontal_bias="0.676"
-        app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/flechita" />
-
-    <View
-        android:id="@+id/view3"
-        android:layout_width="125dp"
-        android:layout_height="125dp"
-        android:background="@drawable/image_view"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.08" />
+        <ImageView
+            android:id="@+id/foto_perfil"
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+            android:background="@drawable/image_view"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.08"
+            android:layout_gravity="center" />
 
         <View
             android:id="@+id/view"
@@ -267,8 +249,8 @@
 
         <ImageView
             android:id="@+id/regresar"
-            android:layout_width="31dp"
-            android:layout_height="35dp"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
             android:layout_marginStart="48dp"
             android:layout_marginTop="20dp"
             android:contentDescription="@string/regresar"

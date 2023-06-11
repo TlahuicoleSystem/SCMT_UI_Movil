@@ -3,9 +3,11 @@ package com.example.scmt_ui_movil;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.example.scmt_ui_movil.interfaces.LoginAPI;
 import com.example.scmt_ui_movil.modelos.LoginEnvio;
 import com.example.scmt_ui_movil.modelos.PerfilConductor;
@@ -23,6 +25,8 @@ public class Perfil extends AppCompatActivity {
     private int rol;
     private  TextView nombreCompleto, numeroEmpleado, usuario, direccion, telefono, licencia, turno;
     private  TextView numeroEmpleado_pasajero, direccion_area, licencia_jefe, turno_;
+
+    private ImageView foto;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,6 +67,7 @@ public class Perfil extends AppCompatActivity {
     }
 
     private void estructura(Map<String,String> datos){
+        foto = findViewById(R.id.foto_perfil);
         numeroEmpleado = findViewById(R.id.numero_empleado);
         usuario = findViewById(R.id.usuario);
         direccion = findViewById(R.id.direccion);
@@ -92,5 +97,8 @@ public class Perfil extends AppCompatActivity {
             licencia.setText(datos.get("jefe_inmediato"));
             turno.setText(datos.get("turno"));
         }
+        String imgPerfil = datos.get("fotografia");
+        Glide.with(getApplicationContext()).load(imgPerfil).into(foto);
     }
+    public void irAInicio(View view) { finish(); }
 }

@@ -124,4 +124,5 @@ public class verIincidencias extends AppCompatActivity {
             }
         });
     }
+    public void irAInicio(View view) { finish(); }
 }

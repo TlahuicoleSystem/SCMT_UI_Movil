@@ -166,9 +166,6 @@ public class Incidencias extends AppCompatActivity implements AdapterView.OnItem
             return false;
         }
     }
-
-    public void irAInicio(View view){
-        finish();
-    }
+    public void irAInicio(View view) { finish(); }
 
 }

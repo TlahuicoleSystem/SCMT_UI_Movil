@@ -59,7 +59,7 @@ public class LeerQR extends AppCompatActivity {
     }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-
+        try {
             IntentResult result = IntentIntegrator.parseActivityResult(requestCode,resultCode,data);
             if(result != null){
                 if(result.getContents() == null){
@@ -81,6 +81,11 @@ public class LeerQR extends AppCompatActivity {
             }else {
                 super.onActivityResult(requestCode, resultCode, data);
             }
+        }catch (Exception e){
+            Toast.makeText(LeerQR.this, "Lo sentimos QR no valido", Toast.LENGTH_SHORT).show();
+            salida.setText("Lo sentimso QR no valido");
+        }
+
 
     }
 
@@ -137,5 +142,5 @@ public class LeerQR extends AppCompatActivity {
         horaa = hora + ":" + minuto + ":" + segundo;
         return horaa;
     }
-
+    public void irAInicio(View view) { finish(); }
 }

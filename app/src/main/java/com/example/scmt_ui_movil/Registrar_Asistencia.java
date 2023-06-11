@@ -123,4 +123,5 @@ public class Registrar_Asistencia extends AppCompatActivity implements AdapterVi
     public void onNothingSelected(AdapterView<?> adapterView) {
         Toast.makeText(Registrar_Asistencia.this,"Selecciona una ruta",Toast.LENGTH_SHORT).show();
     }
+    public void irAInicio(View view) { finish(); }
 }
