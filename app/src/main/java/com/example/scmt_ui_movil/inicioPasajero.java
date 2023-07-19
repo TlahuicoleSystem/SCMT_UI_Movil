@@ -61,6 +61,7 @@ public class inicioPasajero extends AppCompatActivity {
         Intent acercaDe = new Intent(inicioPasajero.this, acercade.class);
         leerQR.putExtra("idPasajero", idUsuario);
         navView = (NavigationView) findViewById(R.id.navView);
+        Intent logeo = new Intent(inicioPasajero.this, MainActivity.class);
         navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
@@ -80,6 +81,10 @@ public class inicioPasajero extends AppCompatActivity {
                     case R.id.op4:
                         System.out.println("Entro en el 4");
                         startActivity(acercaDe);
+                        break;
+                    case R.id.op5:
+                        System.out.println("Entro en el 5");
+                        startActivity(logeo);
                         break;
                 }
                 return false;
