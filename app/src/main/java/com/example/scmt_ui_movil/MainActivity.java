@@ -1,8 +1,17 @@
 package com.example.scmt_ui_movil;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import androidx.biometric.BiometricPrompt;
+import androidx.core.content.ContextCompat;
+
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -15,6 +24,7 @@ import com.example.scmt_ui_movil.modelos.LoginEnvio;
 
 import java.util.ArrayList;
 import java.util.Map;
+import java.util.concurrent.Executor;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -27,6 +37,10 @@ public class MainActivity extends AppCompatActivity {
     EditText usuario;
     EditText contraseña;
     Button entrar;
+    Button huella;
+    private Executor executor;
+    private BiometricPrompt biometricPrompt;
+    private BiometricPrompt.PromptInfo promptInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,16 +49,98 @@ public class MainActivity extends AppCompatActivity {
         usuario = findViewById(R.id.cTUsuario);
         contraseña = findViewById(R.id.cTContrasenia);
         entrar = findViewById(R.id.btniniciar_sesion);
+
+        executor = ContextCompat.getMainExecutor(this);
+        biometricPrompt = new BiometricPrompt(MainActivity.this,
+                executor, new BiometricPrompt.AuthenticationCallback() {
+            @Override
+            public void onAuthenticationError(int errorCode, @NonNull CharSequence errString) {
+                super.onAuthenticationError(errorCode, errString);
+                Toast.makeText(getApplicationContext(),
+                        "Error de Autenticacion: " + errString, Toast.LENGTH_SHORT)
+                        .show();
+            }
+
+            @Override
+            public void onAuthenticationSucceeded(@NonNull BiometricPrompt.AuthenticationResult result) {
+                super.onAuthenticationSucceeded(result);
+                iniciarAutenticacionBiometrica();
+                Toast.makeText(getApplicationContext(),
+                        "Autenticacion correcta", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onAuthenticationFailed() {
+                super.onAuthenticationFailed();
+                Toast.makeText(getApplicationContext(),
+                        "Falla en la autenticacion", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        promptInfo = new BiometricPrompt.PromptInfo.Builder()
+                .setTitle("Inicio de sesion por huella dactilar")
+                .setNegativeButtonText("Usa la contraseña de tu cuenta")
+                .build();
+
+        huella = findViewById(R.id.btnhuella);
+        huella.setOnClickListener(view -> {
+            biometricPrompt.authenticate(promptInfo);
+        });
+
         entrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (usuario.getText().toString().isEmpty() && contraseña.getText().toString().isEmpty()) {
-                    Toast.makeText(MainActivity.this, "Por favor ingrese los datos", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                postData(usuario.getText().toString(), contraseña.getText().toString());
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                builder.setMessage("¿Desea guardar y recordar los datos de inicio de sesion?")
+                        .setPositiveButton("Guardar", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                String usuarioSave = usuario.getText().toString();
+                                String contraseniaSave = contraseña.getText().toString();
+
+                                if (usuarioSave.isEmpty() && contraseniaSave.isEmpty()){
+                                    Toast.makeText(MainActivity.this, "Por favor ingrese los datos", Toast.LENGTH_SHORT).show();
+                                    return;
+                                }
+
+                                SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+                                SharedPreferences.Editor editor = sharedPreferences.edit();
+                                editor.putString("username", usuarioSave);
+                                editor.putString("password", contraseniaSave);
+                                editor.apply();
+
+                                postData(usuarioSave, contraseniaSave);
+                            }
+                        })
+                        .setNegativeButton("No recordar", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                String usuarioSave = usuario.getText().toString();
+                                String contraseniaSave = contraseña.getText().toString();
+
+                                if (usuarioSave.isEmpty() && contraseniaSave.isEmpty()){
+                                    Toast.makeText(MainActivity.this, "Por favor ingrese los datos", Toast.LENGTH_SHORT).show();
+                                    return;
+                                }
+                                postData(usuarioSave, contraseniaSave);
+                            }
+                        });
+                AlertDialog dialog = builder.create();
+                dialog.show();
             }
         });
+    }
+
+    private void iniciarAutenticacionBiometrica(){
+        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+        String savedUsername = sharedPreferences.getString("username", "");
+        String savedPassword = sharedPreferences.getString("username", "");
+
+        if (!savedUsername.isEmpty() && !savedPassword.isEmpty()){
+            postData(savedUsername, savedPassword);
+        }else{
+            Toast.makeText(getApplicationContext(), "No se encontraron datos de inicio de sesion guardados", Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void postData(String usuariot, String contraseñaa) {
