@@ -31,19 +31,21 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class verIincidencias extends AppCompatActivity {
 
     private int idRuta;
+    private int idUsuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ver_iincidencias);
-        consumirIncidencias(1);
+        idUsuario = Integer.parseInt(getIntent().getStringExtra("id"));
+        consumirIncidencias(idUsuario);
     }
 
-    protected void consumirIncidencias(int usuarioRuta){
+    protected void consumirIncidencias(int idUsuario){
         List<Map<String, String>> listaIncidencias = new ArrayList<>();
         Retrofit retrofit = new Retrofit.Builder().baseUrl("https://scmtapis.azurewebsites.net/").addConverterFactory(GsonConverterFactory.create()).build();
         IncidenciaAPI incidenciaAPI = retrofit.create(IncidenciaAPI.class);
-        Call<List<IncidenciaModel>> call = incidenciaAPI.obtenerIncidencias(1);
+        Call<List<IncidenciaModel>> call = incidenciaAPI.obtenerIncidencias(idUsuario);
         call.enqueue(new Callback<List<IncidenciaModel>>() {
             @Override
             public void onResponse(Call<List<IncidenciaModel>> call, Response<List<IncidenciaModel>> response) {
