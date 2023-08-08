@@ -24,6 +24,6 @@
     </item>
     <item android:title="Cerrar sesion"
         android:icon="@drawable/ic_perfil"
-        android:id="@id/op5">
+        android:id="@+id/op6">
     </item>
 </menu>

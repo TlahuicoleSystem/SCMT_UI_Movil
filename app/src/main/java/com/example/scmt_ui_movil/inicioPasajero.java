@@ -86,7 +86,7 @@ public class inicioPasajero extends AppCompatActivity {
                         break;
                     case R.id.op5:
                         System.out.println("Entro en el 5");
-                        startActivity(iniciarRuta);
+                        startActivity(verRuta);
                     break;
                     case R.id.op6:
                         System.out.println("Entro en el 6");

@@ -23,6 +23,6 @@
         android:id="@+id/op4">
     </item>
     <item android:title="Cerrar sesion"
-        android:id="@id/op5"
+        android:id="@+id/op6"
         android:icon="@drawable/ic_perfil"/>
 </menu>
