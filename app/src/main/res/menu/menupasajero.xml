@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:textColor="@color/white">
     <item android:title="Perfil"
         android:icon="@drawable/ic_perfil"
@@ -21,4 +22,7 @@
         android:icon="@drawable/ic_perfil"
         android:id="@+id/op4">
     </item>
+    <item android:title="Cerrar sesion"
+        android:id="@id/op5"
+        android:icon="@drawable/ic_perfil"/>
 </menu>

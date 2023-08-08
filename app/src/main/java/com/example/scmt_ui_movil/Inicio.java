@@ -60,6 +60,7 @@ public class Inicio extends AppCompatActivity {
         Intent iniciarRuta = new Intent(Inicio.this,compartir_ubicacion.class);
         iniciarRuta.putExtra("id",idUsuario);
         navView = (NavigationView) findViewById(R.id.navView);
+        Intent logeo = new Intent(Inicio.this, MainActivity.class);
         navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
@@ -83,7 +84,11 @@ public class Inicio extends AppCompatActivity {
                     case R.id.op5:
                         System.out.println("Entro en el 5");
                         startActivity(iniciarRuta);
-                        break;
+                    break;
+                    case R.id.op6:
+                        System.out.println("Entro en el 6");
+                        startActivity(logeo);
+                    break;
                 }
                 return false;
             }
