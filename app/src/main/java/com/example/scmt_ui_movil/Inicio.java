@@ -57,6 +57,8 @@ public class Inicio extends AppCompatActivity {
         Intent visualizarQR = new Intent(Inicio.this,Registrar_Asistencia.class);
         visualizarQR.putExtra("id",idUsuario);
         Intent acercaDe = new Intent(Inicio.this, acercade.class);
+        Intent iniciarRuta = new Intent(Inicio.this,compartir_ubicacion.class);
+        iniciarRuta.putExtra("id",idUsuario);
         navView = (NavigationView) findViewById(R.id.navView);
         Intent logeo = new Intent(Inicio.this, MainActivity.class);
         navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -81,8 +83,12 @@ public class Inicio extends AppCompatActivity {
                         break;
                     case R.id.op5:
                         System.out.println("Entro en el 5");
+                        startActivity(iniciarRuta);
+                    break;
+                    case R.id.op6:
+                        System.out.println("Entro en el 6");
                         startActivity(logeo);
-                        break;
+                    break;
                 }
                 return false;
             }

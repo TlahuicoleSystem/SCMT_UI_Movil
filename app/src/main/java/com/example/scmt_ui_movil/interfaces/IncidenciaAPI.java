@@ -17,4 +17,6 @@ public interface IncidenciaAPI {
     Call<List<ListaRutas>> rutas (@Query("id") int id);
     @GET("scmt/consultarRutasIncidencias")
     Call<List<IncidenciaModel>> obtenerIncidencias(@Query("usuarioRuta") int usuarioRuta);
+    @GET("scmt/consultarRutasPasajero")
+    Call<List<ListaRutas>> rutasPasajero (@Query("id") int id);
 }

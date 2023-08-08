@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "157381922300",
+    "project_id": "scmtlocation",
+    "storage_bucket": "scmtlocation.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:157381922300:android:c9d2317d9e0cdddb0cb679",
+        "android_client_info": {
+          "package_name": "com.example.scmt_ui_movil"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "157381922300-f6j64jvk0ir0m88b9vs34b72algt0slh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPyZwKGK8le-rfvt68aofpSKy1ZggBv_Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "157381922300-f6j64jvk0ir0m88b9vs34b72algt0slh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

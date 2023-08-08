@@ -41,4 +41,5 @@
     <string name="version_1_0_0">Version 1.0.0</string>
     <string name="_2023">© 2023</string>
     <string name="cerrar_sesion">Cerrar Sesion</string>
+    <string name="title_activity_ubicacion_mapa">Ubicacion_mapa</string>
 </resources>
