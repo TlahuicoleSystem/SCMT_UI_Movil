@@ -60,6 +60,8 @@ public class inicioPasajero extends AppCompatActivity {
         Intent leerQR = new Intent(inicioPasajero.this,LeerQR.class);
         Intent acercaDe = new Intent(inicioPasajero.this, acercade.class);
         leerQR.putExtra("idPasajero", idUsuario);
+        Intent verRuta = new Intent(inicioPasajero.this, VerUbicacion.class);
+        verRuta.putExtra("id",idUsuario);
         navView = (NavigationView) findViewById(R.id.navView);
         navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -80,6 +82,10 @@ public class inicioPasajero extends AppCompatActivity {
                     case R.id.op4:
                         System.out.println("Entro en el 4");
                         startActivity(acercaDe);
+                        break;
+                    case R.id.op5:
+                        System.out.println("Entro en el 5");
+                        startActivity(verRuta);
                         break;
                 }
                 return false;
