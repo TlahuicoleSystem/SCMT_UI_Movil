@@ -14,6 +14,10 @@
         android:icon="@drawable/ic_perfil"
         android:id="@+id/op3">
     </item>
+    <item android:title="Iniciar ruta"
+        android:icon="@drawable/ic_perfil"
+        android:id="@+id/op5">
+    </item>
     <item android:title="Acerca de..."
         android:icon="@drawable/ic_perfil"
         android:id="@+id/op4">
