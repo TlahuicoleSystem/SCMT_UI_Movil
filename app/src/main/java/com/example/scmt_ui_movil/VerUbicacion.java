@@ -46,7 +46,7 @@ public class VerUbicacion extends AppCompatActivity implements AdapterView.OnIte
 
     public void consumirRutas(int idUsuario){
         ArrayList<String> listaRuta = new ArrayList<String>();
-        Retrofit usuarioR = new Retrofit.Builder().baseUrl("http://192.168.1.70:5000/").addConverterFactory(GsonConverterFactory.create()).build();
+        Retrofit usuarioR = new Retrofit.Builder().baseUrl("https://scmtapis.azurewebsites.net/").addConverterFactory(GsonConverterFactory.create()).build();
         IncidenciaAPI rutasAPI = usuarioR.create(IncidenciaAPI.class);
         Call<List<ListaRutas>> call = rutasAPI.rutasPasajero(idUsuario);
         call.enqueue(new Callback<List<ListaRutas>>() {
