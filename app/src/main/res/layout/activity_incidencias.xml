@@ -29,7 +29,7 @@
         android:autofillHints=""
         android:background="@drawable/ct_trans_radius"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="textMultiLine"
         android:text=""
         android:textColor="@color/white"
         android:textColorHint="@android:color/white"
