@@ -59,7 +59,7 @@ public class verIincidencias extends AppCompatActivity {
                             mapaIncidencia.put("Nombre de la ruta: ", incidencia.getNombre_ruta());
                             mapaIncidencia.put("Nombre de la incidencia: ", incidencia.getNombre_incidente());
                             mapaIncidencia.put("Descripcion: ", incidencia.getDescripcion());
-                            mapaIncidencia.put("Fecha/Hora: ", incidencia.getFecha() + " " + incidencia.getHora());
+                            mapaIncidencia.put("Fecha/Hora: ", incidencia.getFecha().substring(0, 10) + " " + incidencia.getHora());
                             listaIncidencias.add(mapaIncidencia);
                             System.out.println(mapaIncidencia);
 
@@ -103,7 +103,7 @@ public class verIincidencias extends AppCompatActivity {
                                     ViewGroup.LayoutParams.WRAP_CONTENT));
                             fechaHora.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
                             fechaHora.setTextColor(Color.parseColor("#4ECDE6"));
-                            fechaHora.setText("Fecha/Hora: " + incidencia.getFecha() + " " + incidencia.getHora());
+                            fechaHora.setText("Fecha/Hora: " + incidencia.getFecha().substring(0, 10) + " " + incidencia.getHora());
 
                             linearLayout.addView(nombreRuta);
                             linearLayout.addView(nombreInci);

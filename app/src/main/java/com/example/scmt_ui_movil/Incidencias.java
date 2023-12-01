@@ -21,7 +21,9 @@ import com.example.scmt_ui_movil.modelos.PerfilConductor;
 
 import org.json.JSONArray;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Map;
 
@@ -38,6 +40,18 @@ public class Incidencias extends AppCompatActivity implements AdapterView.OnItem
     private Spinner sPruta;
     private EditText cTdescripcion;
     private Button insertar;
+
+    public String obtenerFecha(){
+        Calendar calendar = Calendar.getInstance();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        return dateFormat.format(calendar.getTime());
+    }
+
+    public String obtenerHora(){
+        Calendar calendar = Calendar.getInstance();
+        SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm:ss");
+        return timeFormat.format(calendar.getTime());
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -121,7 +135,9 @@ public class Incidencias extends AppCompatActivity implements AdapterView.OnItem
     private void insertarIncidencia(int idUsuario,int idRuta,String nombre, String descripcion){
         Retrofit retrofit = new Retrofit.Builder().baseUrl("https://scmtapis.azurewebsites.net/").addConverterFactory(GsonConverterFactory.create()).build();
         IncidenciaAPI retrofitAPI = retrofit.create(IncidenciaAPI.class);
-        IncidenciaModel modal = new com.example.scmt_ui_movil.modelos.IncidenciaModel(idRuta, idUsuario, nombre,descripcion,"2023-05-09","07:30:00");
+        String fecha = obtenerFecha();
+        String hora = obtenerHora();
+        IncidenciaModel modal = new com.example.scmt_ui_movil.modelos.IncidenciaModel(idRuta, idUsuario, nombre, descripcion, fecha, hora);
         Call<IncidenciaModel> call = retrofitAPI.insertarIncidencia(modal);
         call.enqueue(new Callback<IncidenciaModel>() {
             @Override
